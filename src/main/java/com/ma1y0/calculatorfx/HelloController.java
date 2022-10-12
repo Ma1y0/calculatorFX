@@ -54,6 +54,8 @@ public class HelloController implements Initializable {
                     ansTextBox.setText(String.valueOf(num1 / num2));
                     break;
                 case "√":
+                    num2TextBox.setDisable(true);
+                    num2TextBox.setText("");
                     ansTextBox.setText((String.valueOf(Math.sqrt(num1))));
                     break;
                 case "**":
@@ -70,6 +72,5 @@ public class HelloController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         ObservableList<String> operators = FXCollections.observableArrayList("+", "-", "*", "/", "**", "√");
         operatorCombo.setItems(operators);
-        operatorCombo.getSelectionModel().selectFirst();
     }
 }
